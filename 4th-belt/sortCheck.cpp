@@ -1,7 +1,9 @@
+// Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
 int main()
 {
+
     int n;
     cin >> n;
 
@@ -11,16 +13,17 @@ int main()
         cin >> a[i];
     }
 
-    bool ascending = true, descending = true;
-    for (int i = 1; i <= n; i++)
+    bool ascending = true;
+    bool descending = true;
+    for (int i = 0; i < n; i++)
     {
+        if (a[i] > a[i - 1])
+        {
+            descending = false;
+        }
         if (a[i] < a[i - 1])
         {
             ascending = false;
-        }
-        if (a[i] > a[i - 1])
-        {
-            descending = true;
         }
     }
 
@@ -32,6 +35,5 @@ int main()
     {
         cout << "0" << endl;
     }
-
     return 0;
 }
