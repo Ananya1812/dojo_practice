@@ -4,7 +4,6 @@ int main()
 {
     int n;
     cin >> n;
-
     int a[n];
     for (int i = 0; i < n; i++)
     {
@@ -21,4 +20,6 @@ int main()
     {
         cout << c[i] << " ";
     }
+
+    return 0;
 }

@@ -1,35 +1,30 @@
 #include <iostream>
 using namespace std;
-
 int main()
 {
     int n;
     cin >> n;
-    int arr[n];
-
+    int a[n];
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        cin >> a[i];
     }
 
-    // Insertion Sort
     for (int i = 1; i < n; i++)
     {
-        int key = arr[i];
+        int key = a[i];
         int j = i - 1;
-
-        while (j >= 0 && arr[j] > key)
+        while (j >= 0 && a[j] > key)
         {
-            arr[j + 1] = arr[j];
+            a[j + 1] = a[j];
             j--;
         }
-        arr[j + 1] = key;
+        a[j + 1] = key;
     }
 
     for (int i = 0; i < n; i++)
     {
-        cout << arr[i] << " ";
+        cout << a[i] << " ";
     }
-    cout << endl;
     return 0;
 }

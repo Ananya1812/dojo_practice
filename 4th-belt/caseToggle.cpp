@@ -2,6 +2,7 @@
 using namespace std;
 int main()
 {
+
     string input;
     getline(cin, input);
 
@@ -16,6 +17,7 @@ int main()
             input[i] = toupper(input[i]);
         }
     }
-
     cout << input << endl;
+
+    return 0;
 }

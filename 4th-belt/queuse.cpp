@@ -17,7 +17,6 @@ public:
     {
         queue[rear++] = value;
     }
-
     int dequeue()
     {
         return queue[front++];
@@ -25,6 +24,7 @@ public:
 };
 int main()
 {
+
     int n;
     cin >> n;
     Queue q(n);
@@ -34,11 +34,9 @@ int main()
         cin >> elements;
         q.enqueue(elements);
     }
-
     for (int i = 0; i < n; i++)
     {
-        cout << q.dequeue() << endl;
+        cout << q.dequeue() << " ";
     }
-
     return 0;
 }

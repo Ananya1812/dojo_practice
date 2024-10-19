@@ -1,29 +1,25 @@
-
-
-
 #include <iostream>
-#include <string>
 using namespace std;
+
 int main()
 {
-    string input;
-    getline(cin, input);
+    string x;
+    getline(cin, x);
     int start = 0;
-    int end = input.length() - 1;
-
-    while (start < input.length() && isspace(input[start]))
+    int end = x.length() - 1;
+    while (start < x.length() && isspace(x[start]))
     {
         start++;
     }
-
-    while (end >= input.length() && isspace(input[end]))
+    while (end > x.length() && isspace(x[end]))
     {
         end--;
     }
 
     for (int i = start; i <= end; i++)
     {
-        cout << input[i];
+        cout << x[i];
     }
+
     return 0;
 }

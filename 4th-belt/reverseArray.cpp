@@ -10,7 +10,6 @@ int main()
     {
         cin >> a[i];
     }
-
     int start = 0;
     int end = n - 1;
     while (start < end)
@@ -21,11 +20,9 @@ int main()
         start++;
         end--;
     }
-
     for (int i = 0; i < n; i++)
     {
         cout << a[i] << " ";
     }
-
     return 0;
 }
