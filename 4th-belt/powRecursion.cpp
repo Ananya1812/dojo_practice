@@ -7,11 +7,18 @@ int main()
     double x;
     int n;
     cin >> x >> n;
-
     double result = 1;
     if (n == 0)
     {
         result = 1;
+    }
+    else if (n < 0)
+    {
+        for (int i = 0; i < -n; i++)
+        {
+            result *= x;
+        }
+        result = 1 / result;
     }
     else
     {
@@ -21,6 +28,7 @@ int main()
         }
     }
 
-    cout << fixed << setprecision(2) << result << endl;
+    cout << fixed << setprecision(2) << result;
+
     return 0;
 }

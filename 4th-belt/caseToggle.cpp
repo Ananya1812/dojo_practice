@@ -3,21 +3,21 @@ using namespace std;
 int main()
 {
 
-    string input;
-    getline(cin, input);
+    string s;
+    getline(cin, s);
 
-    for (int i = 0; i < input.length(); i++)
+    for (int i = 0; i < s.length(); i++)
     {
-        if (isupper(input[i]))
+        if (isupper(s[i]))
         {
-            input[i] = tolower(input[i]);
+            s[i] = tolower(s[i]);
         }
-        else if (islower(input[i]))
+        else if (islower(s[i]))
         {
-            input[i] = toupper(input[i]);
+            s[i] = toupper(s[i]);
         }
     }
-    cout << input << endl;
+    cout << s << endl;
 
     return 0;
 }
