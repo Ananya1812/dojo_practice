@@ -1,55 +1,62 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
 {
-    char str[100];
-    char word[50];
-    cin.getline(str, sizeof(str));
-    cin >> word;
+    string S, W;
+    getline(cin, S);
+    getline(cin, W);
 
-    int lastOccurrenceIndex = -1;
-    int strLength = 0;
+    int lenS = S.length();
+    int lenW = W.length();
 
-    while (str[strLength] != '\0')
+    int start = -1;
+
+    for (int i = 0; i <= lenS - lenW; ++i)
     {
-        strLength++;
-    }
-
-    for (int i = 0; i <= strLength - 1; i++)
-    {
-        int j = 0;
-        while (str[i + j] == word[j] && word[j] != '\0')
+        int j;
+        for (j = 0; j < lenW; ++j)
         {
-            j++;
-        }
-        if (word[j] == '\0' && (str[i + j] == ' ' || str[i + j] == '\0'))
-        {
-            lastOccurrenceIndex = i;
-        }
-    }
-
-    if (lastOccurrenceIndex != -1)
-    {
-        for (int i = lastOccurrenceIndex; i < strLength; i++)
-        {
-            int j = 0;
-            while (str[i + j] == word[j] && word[j] != '\0')
+            if (S[i + j] != W[j])
             {
-                j++;
-            }
-            if (word[j] == '\0' && (str[i + j] == ' ' || str[i + j] == '\0'))
-            {
-                for (int k = i; k < strLength; k++)
-                {
-                    str[k] = str[k + j + 1];
-                }
                 break;
             }
         }
+        if (j == lenW)
+        {
+            start = i;
+        }
     }
 
-    cout << str << endl;
+    if (start != -1)
+    {
+        for (int k = start; k < lenS - lenW; ++k)
+        {
+            S[k] = S[k + lenW];
+        }
+
+        lenS -= lenW;
+        S[lenS] = '\0';
+    }
+
+    int startTrim = 0;
+    while (startTrim < lenS && S[startTrim] == ' ')
+    {
+        startTrim++;
+    }
+
+    int endTrim = lenS - 1;
+    while (endTrim >= 0 && S[endTrim] == ' ')
+    {
+        endTrim--;
+    }
+
+    for (int i = startTrim; i <= endTrim; ++i)
+    {
+        cout << S[i];
+    }
+    cout << endl;
 
     return 0;
 }

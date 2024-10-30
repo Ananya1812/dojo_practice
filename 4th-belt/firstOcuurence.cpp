@@ -1,44 +1,63 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
 {
-    char str[100];
-    char word[50];
-    cin.getline(str, sizeof(str));
-    cin >> word;
+    string S, W;
+    getline(cin, S);
+    getline(cin, W);
 
-    int i = 0, j = 0;
+    int lenS = S.length();
+    int lenW = W.length();
 
-    while (str[i])
+    int start = -1;
+
+    for (int i = 0; i <= lenS - lenW; ++i)
     {
-        int k = 0;
-
-        while (str[i + k] == word[k] && word[k] != '\0')
+        int j;
+        for (j = 0; j < lenW; ++j)
         {
-            k++;
+            if (S[i + j] != W[j])
+            {
+                break;
+            }
         }
-
-        if (word[k] == '\0')
+        if (j == lenW)
         {
-            i += k;
+            start = i;
             break;
         }
-        str[j++] = str[i++];
     }
 
-    while (str[i] != '\0')
+    if (start != -1)
     {
-        str[j++] = str[i++];
+        for (int k = start; k < lenS - lenW; ++k)
+        {
+            S[k] = S[k + lenW];
+        }
+
+        lenS -= lenW;
+        S[lenS] = '\0';
     }
 
-    int start = 0;
-    while (str[start] == ' ')
+    int startTrim = 0;
+    while (startTrim < lenS && S[startTrim] == ' ')
     {
-        start++;
+        startTrim++;
     }
 
-    cout << &str[start] << endl;
+    int endTrim = lenS - 1;
+    while (endTrim >= 0 && S[endTrim] == ' ')
+    {
+        endTrim--;
+    }
+
+    for (int i = startTrim; i <= endTrim; ++i)
+    {
+        cout << S[i];
+    }
+    cout << endl;
 
     return 0;
 }

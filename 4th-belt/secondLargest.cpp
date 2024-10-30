@@ -27,14 +27,7 @@ int main()
         }
     }
 
-    if (second == INT_MIN)
-    {
-        cout << "No second largest element" << endl;
-    }
-    else
-    {
-        cout << second << endl;
-    }
+    cout << second;
 
     return 0;
 }
