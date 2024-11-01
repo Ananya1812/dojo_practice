@@ -37,4 +37,4 @@ for _ in range(n):
     elif query[0] == 3: 
         output.append(stack.getMax())  
 
-print("\n".join(map(str, output)))
+print(" ".join(map(str, output)))
