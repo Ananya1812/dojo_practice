@@ -42,7 +42,6 @@ int main()
         cin >> elements;
         q.enqueue(elements);
     }
-
     for (int i = 0; i < n; i++)
     {
         cout << q.peek() << endl; 

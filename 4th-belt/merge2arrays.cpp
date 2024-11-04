@@ -1,59 +1,56 @@
 #include <iostream>
 using namespace std;
 
-void selectionSort(int arr[], int n)
+void insertionSort(int arr[], int n)
 {
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 1; i < n; i++)
     {
-        int minIndex = i;
-        for (int j = i + 1; j < n; j++)
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key)
         {
-            if (arr[j] < arr[minIndex])
-            {
-                minIndex = j;
-            }
+            arr[j + 1] = arr[j];
+            j--;
         }
-        int temp = arr[minIndex];
-        arr[minIndex] = arr[i];
-        arr[i] = temp;
+        arr[j + 1] = key;
     }
 }
 
 int main()
 {
-    int size1, size2;
-    cin >> size1;
-    int a1[size1];
-    for (int i = 0; i < size1; i++)
+    int n1;
+    cin >> n1;
+    int a1[n1];
+    for (int i = 0; i < n1; i++)
     {
         cin >> a1[i];
     }
 
-    cin >> size2;
-    int a2[size2];
-    for (int i = 0; i < size2; i++)
+    int n2;
+    cin >> n2;
+    int a2[n2];
+    for (int i = 0; i < n2; i++)
     {
         cin >> a2[i];
     }
 
-    int mergedSize = size1 + size2;
-    int merged[mergedSize];
+    int n = n1 + n2;
+    int merged[n];
 
-    for (int i = 0; i < size1; i++)
+    for (int i = 0; i < n1; i++)
     {
         merged[i] = a1[i];
     }
-    for (int i = 0; i < size2; i++)
+    for (int i = 0; i < n2; i++)
     {
-        merged[size1 + i] = a2[i];
+        merged[n1 + i] = a2[i];
     }
 
-    selectionSort(merged, mergedSize);
-    for (int i = 0; i < mergedSize; i++)
+    insertionSort(merged, n);
+    for (int i = 0; i < n; i++)
     {
         cout << merged[i] << " ";
     }
-    cout << endl;
 
     return 0;
 }

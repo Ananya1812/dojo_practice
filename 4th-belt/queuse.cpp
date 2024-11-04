@@ -24,7 +24,6 @@ public:
 };
 int main()
 {
-
     int n;
     cin >> n;
     Queue q(n);

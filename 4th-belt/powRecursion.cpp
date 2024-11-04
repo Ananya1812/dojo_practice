@@ -1,12 +1,12 @@
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 using namespace std;
 int main()
 {
-
     double x;
     int n;
     cin >> x >> n;
+
     double result = 1;
     if (n == 0)
     {
@@ -28,7 +28,6 @@ int main()
         }
     }
 
-    cout << fixed << setprecision(2) << result;
-
+    cout << fixed << setprecision(2) << result << endl;
     return 0;
 }

@@ -1,79 +1,81 @@
 #include <iostream>
-#include <string>
-
 using namespace std;
 
 int main()
 {
+
     string s;
     cin >> s;
-    int roundCount = 0;
-    int squareCount = 0;
-    int curlyCount = 0;
-    for (char ch : s)
+
+    int roundB = 0;
+    int curlyB = 0;
+    int squareB = 0;
+
+    for (char c : s)
     {
-        if (ch == '(')
+        if (c == '(')
         {
-            roundCount++;
+            roundB++;
         }
-        else if (ch == '[')
+        else if (c == '{')
         {
-            squareCount++;
+            curlyB++;
         }
-        else if (ch == '{')
+        else if (c == '[')
         {
-            curlyCount++;
+            squareB++;
         }
-        else if (ch == ')')
+        else if (c == ')')
         {
-            roundCount--;
-            if (roundCount < 0)
+            roundB--;
+            if (roundB < 0)
             {
-                cout << "false" << endl;
+                cout << "False" << endl;
                 return 0;
             }
-            if (squareCount > 0 || curlyCount > 0)
+            else if (curlyB > 0 || squareB > 0)
             {
-                cout << "false" << endl;
-                return 0;
-            }
-        }
-        else if (ch == ']')
-        {
-            squareCount--;
-            if (squareCount < 0)
-            {
-                cout << "false" << endl;
-                return 0;
-            }
-            if (roundCount > 0 || curlyCount > 0)
-            {
-                cout << "false" << endl;
+                cout << "False" << endl;
                 return 0;
             }
         }
-        else if (ch == '}')
+        else if (c == '}')
         {
-            curlyCount--;
-            if (curlyCount < 0)
+            curlyB--;
+            if (curlyB < 0)
             {
-                cout << "false" << endl;
+                cout << "False" << endl;
                 return 0;
             }
-            if (roundCount > 0 || squareCount > 0)
+            else if (roundB > 0 || squareB > 0)
             {
-                cout << "false" << endl;
+                cout << "False" << endl;
+                return 0;
+            }
+        }
+        else if (c == ']')
+        {
+            squareB--;
+            if (squareB < 0)
+            {
+                cout << "False" << endl;
+                return 0;
+            }
+            else if (roundB > 0 || curlyB > 0)
+            {
+                cout << "False" << endl;
                 return 0;
             }
         }
     }
-    if (roundCount == 0 && squareCount == 0 && curlyCount == 0)
+
+    if (roundB == 0 && squareB == 0 && curlyB == 0)
     {
-        cout << "true" << endl;
+        cout << "True" << endl;
     }
     else
     {
-        cout << "false" << endl;
+        cout << "False" << endl;
     }
 
     return 0;

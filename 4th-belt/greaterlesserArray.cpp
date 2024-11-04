@@ -1,57 +1,55 @@
 #include <iostream>
 using namespace std;
-
 int main()
 {
-    int n, x;
+    int n;
     cin >> n;
-    int arr[n];
+
+    int a[n];
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        cin >> a[i];
     }
-    cin >> x;
 
-    int greaterCount = 0, lessEqualCount = 0;
+    int t;
+    cin >> t;
 
+    int gc = 0, lc = 0;
     for (int i = 0; i < n; i++)
     {
-        if (arr[i] > x)
+        if (a[i] > t)
         {
-            greaterCount++;
+            gc++;
         }
         else
         {
-            lessEqualCount++;
+            lc++;
         }
     }
 
-    int greater[greaterCount];
-    int lessEqual[lessEqualCount];
-
-    int gIndex = 0, leIndex = 0;
+    int greater[gc], lesser[lc];
+    int gIndex = 0, lIndex = 0;
     for (int i = 0; i < n; i++)
     {
-        if (arr[i] > x)
+        if (a[i] > t)
         {
-            greater[gIndex++] = arr[i];
+            greater[gIndex++] = a[i];
         }
         else
         {
-            lessEqual[leIndex++] = arr[i];
+            lesser[lIndex++] = a[i];
         }
     }
 
-    for (int i = 0; i < greaterCount; i++)
+    for (int i = 0; i < gc; i++)
     {
         cout << greater[i] << " ";
     }
     cout << endl;
-    for (int i = 0; i < lessEqualCount; i++)
-    {
-        cout << lessEqual[i] << " ";
-    }
-    cout << endl;
 
+    for (int i = 0; i < lc; i++)
+    {
+        cout << lesser[i] << " ";
+    }
     return 0;
 }

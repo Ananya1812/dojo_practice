@@ -1,56 +1,58 @@
 #include <iostream>
 #include <climits>
 using namespace std;
-
 int main()
 {
-    string str;
-    getline(cin, str);
+    string s;
+    getline(cin, s);
 
-    int freq[256] = {0};
-    for (int i = 0; i < str.length(); i++)
+    int min = INT_MAX;
+    int max = INT_MIN;
+
+    int f[256] = {0};
+    for (int i = 0; i < s.length(); i++)
     {
-        if (str[i] != ' ')
+        if (s[i] != ' ')
         {
-            freq[(int)str[i]]++;
+            f[(int)s[i]]++;
         }
     }
 
-    int minFreq = INT_MAX, maxFreq = INT_MIN;
     for (int i = 0; i < 256; i++)
     {
-        if (freq[i] > 0)
+        if (f[i] > 0)
         {
-            if (freq[i] > maxFreq)
+            if (f[i] > max)
             {
-                maxFreq = freq[i];
+                max = f[i];
             }
-            if (freq[i] < minFreq)
+
+            if (f[i] < min)
             {
-                minFreq = freq[i];
+                min = f[i];
             }
         }
     }
 
-    cout << "Highest frequency character(s): ";
+    cout << "Highest Frequency" << endl;
     for (int i = 0; i < 256; i++)
     {
-        if (freq[i] == maxFreq)
-        {
-            cout << (char)i << " " << freq[i] << " ";
-        }
-    }
-    cout << endl;
-
-    cout << "Lowest frequency character(s): ";
-    for (int i = 0; i < 256; i++)
-    {
-        if (freq[i] == minFreq)
+        if (f[i] == max)
         {
             cout << (char)i << " ";
         }
     }
-    cout << minFreq << endl;
+    cout << max << endl;
+
+    cout << "Lowest frequency" << endl;
+    for (int i = 0; i < 256; i++)
+    {
+        if (f[i] == min)
+        {
+            cout << (char)i << " ";
+        }
+    }
+    cout << min << endl;
 
     return 0;
 }

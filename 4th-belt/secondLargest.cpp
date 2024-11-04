@@ -1,33 +1,31 @@
-#include <iostream>
 #include <climits>
+#include <iostream>
 using namespace std;
-
 int main()
 {
     int n;
     cin >> n;
-    int arr[n];
+
+    int a[n];
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        cin >> a[i];
     }
 
-    int first = INT_MIN, second = INT_MIN;
-
+    int first = INT_MIN;
+    int second = INT_MIN;
     for (int i = 0; i < n; i++)
     {
-        if (arr[i] > first)
+        if (a[i] > first)
         {
             second = first;
-            first = arr[i];
+            first = a[i];
         }
-        else if (arr[i] > second && arr[i] != first)
+        else if (a[i] > second && a[i] != first)
         {
-            second = arr[i];
+            second = a[i];
         }
     }
-
-    cout << second;
-
+    cout << second << endl;
     return 0;
 }

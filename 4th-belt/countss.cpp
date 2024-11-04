@@ -1,32 +1,28 @@
 #include <iostream>
 using namespace std;
-
 int main()
 {
-    string input;
-    getline(cin, input);
+    string s;
+    getline(cin, s);
 
-    int alphabets = 0;
-    int digits = 0;
-    int specialChars = 0;
-
-    for (char c : input)
+    int alpha = 0;
+    int digit = 0;
+    int special = 0;
+    for (char c : s)
     {
         if (isalpha(c))
         {
-            alphabets++;
+            alpha++;
         }
         else if (isdigit(c))
         {
-            digits++;
+            digit++;
         }
         else
         {
-            specialChars++;
+            special++;
         }
     }
-
-    cout << alphabets << " " << digits << " " << specialChars << endl;
-
+    cout << alpha << " " << digit << " " << special << endl;
     return 0;
 }

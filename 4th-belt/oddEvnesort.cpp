@@ -1,53 +1,54 @@
+// Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
-
 int main()
 {
     int n;
     cin >> n;
+
     int a[n];
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
     }
-    int evenCount = 0, oddCount = 0;
+
+    int ec = 0, oc = 0;
     for (int i = 0; i < n; i++)
     {
         if (a[i] % 2 == 0)
         {
-            evenCount++;
+            ec++;
         }
         else
         {
-            oddCount++;
+            oc++;
         }
     }
 
-    int even[evenCount], odd[oddCount];
-    int evenIndex = 0, oddIndex = 0;
-
+    int even[ec], odd[oc];
+    int ei = 0, oi = 0;
     for (int i = 0; i < n; i++)
     {
         if (a[i] % 2 == 0)
         {
-            even[evenIndex++] = a[i];
+            even[ei++] = a[i];
         }
         else
         {
-            odd[oddIndex++] = a[i];
+            odd[oi++] = a[i];
         }
     }
 
-    for (int i = 0; i < evenCount; i++)
+    for (int i = 0; i < ec; i++)
     {
         cout << even[i] << " ";
     }
     cout << endl;
-    for (int i = 0; i < oddCount; i++)
+
+    for (int i = 0; i < oc; i++)
     {
         cout << odd[i] << " ";
     }
-    cout << endl;
 
     return 0;
 }
