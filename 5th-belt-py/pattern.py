@@ -1,9 +1,7 @@
-# Input
 n = int(input())
-arr = list(map(int, input().split()))
-
-for start in range(n):
+a = list(map(int,input().split()))
+for i in range(n):
     subarray = []
-    for end in range(start, n):
-        subarray.append(arr[end]) 
-        print(" ".join(map(str, subarray)))
+    for j in range (i,n):
+        subarray.append(a[j])
+        print(" ".join(map(str,subarray)))

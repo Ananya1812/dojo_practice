@@ -1,16 +1,16 @@
-def findContentChildren(g, s):
+def findChildren(g,s):
     content_children = 0
-    used_cookies = [False] * len(s)  
+    used_cookies = [False] * len(s)
     for greed in g:
-        for i in range(len(s)):
+        for i in range (len(s)):
             if not used_cookies[i] and s[i] >= greed:
-                content_children += 1
-                used_cookies[i] = True 
-                break  
+                content_children +=1 
+                used_cookies[i] = True
+                break
     return content_children
-
+    
 n = int(input())
-g = list(map(int, input().split()))
+g = list(map(int,input().split()))
 m = int(input())
-s = list(map(int, input().split()))
-print(findContentChildren(g, s))
+s = list(map(int,input().split()))
+print(findChildren(g,s))

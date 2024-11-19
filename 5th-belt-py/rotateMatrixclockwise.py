@@ -1,6 +1,10 @@
-# matrix input 
+#for input in 2 separate lines
 rows = int(input())
 cols = int(input())
+
+#for input in 1 line
+rows,cols = map(int,input().split())
+
 matrix = []
 for i in range(rows):
     r = list(map(int,input().split()))

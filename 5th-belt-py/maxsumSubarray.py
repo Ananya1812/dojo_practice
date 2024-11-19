@@ -1,5 +1,5 @@
 def max_subarray_sum(arr):
-    if not arr:  # If the array is empty
+    if not arr: 
         return 0
     
     max_sum = arr[0]
