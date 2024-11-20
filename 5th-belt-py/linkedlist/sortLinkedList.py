@@ -21,7 +21,7 @@ def print_linked_list(head):
   print()
   
 def sorted_list(head):
-  if not head:
+  if not head and not head.next:
     return head
   swapped = True
   while swapped:
