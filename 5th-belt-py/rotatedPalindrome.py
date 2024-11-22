@@ -8,16 +8,18 @@ def is_palindrome(s):
 def can_form_palindrome_by_rotation(s):
     n = len(s)
     
-    for i in range(n):
-        rotated = s[i:] + s[:i]
+    for i in range(n):  
+        is_rotated_palindrome = True
         
-        if is_palindrome(rotated):
+        for j in range(n):  
+            if s[(i + j) % n] != s[(i + n - j - 1) % n]:
+                is_rotated_palindrome = False
+                break
+        
+        if is_rotated_palindrome:
             return "Yes, the rotated string is a palindrome."
     
     return "No, the rotated string is not a palindrome."
 
-# Input from the user
 s = input()
-
-# Output the result
 print(can_form_palindrome_by_rotation(s))
