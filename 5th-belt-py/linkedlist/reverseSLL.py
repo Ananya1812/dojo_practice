@@ -1,9 +1,8 @@
-# given a linked list , reverse teh linked list without sorting , use recursive function
 class Node:
     def __init__(self, data):  
         self.data = data
         self.next = None
-    
+        
 def create_linked_list(lst):
     if not lst:
         return None
@@ -13,15 +12,15 @@ def create_linked_list(lst):
         current.next = Node(data)
         current = current.next
     return head
-
+    
 def print_linked_list(head):
     current = head
-    while current :
-        print(current.data,end=" ")
+    while current:
+        print(current.data,end = " ")
         current = current.next
     print()
-
-def reverse_linked_list(head):
+    
+def reverse_list(head):
     prev = None
     current = head
     while current:
@@ -30,9 +29,17 @@ def reverse_linked_list(head):
         prev = current
         current = next_node
     return prev
-
+    
 n = int(input())
 input_list = list(map(int,input().split()))
 head = create_linked_list(input_list)
-revrsed = reverse_linked_list(head)
-print_linked_list(revrsed)
+reversed = reverse_list(head)
+print_linked_list(reversed)
+     
+     
+    
+    
+    
+    
+    
+    

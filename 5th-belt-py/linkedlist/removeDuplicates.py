@@ -1,5 +1,3 @@
-#remove the duplicates from the code
-
 class Node:
     def __init__(self, data):  
         self.data = data
@@ -14,19 +12,19 @@ def create_linked_list(lst):
         current.next = Node(data)
         current = current.next
     return head
-
+    
 def print_linked_list(head):
     current = head
-    while current:
-        print(current.data,end=" ")
+    while current :
+        print(current.data, end = " ")
         current = current.next
     print()
-
+    
 def remove_duplicates(head):
     if not head and head.next:
         return None
     current = head
-    while current :
+    while current:
         runner = current
         while runner.next:
             if runner.next.data == current.data:
@@ -35,9 +33,23 @@ def remove_duplicates(head):
                 runner = runner.next
         current = current.next
     return head
-
+    
 n = int(input())
-input = list(map(int,input().split()))
-head = create_linked_list(input)
-removed_head = remove_duplicates(head)
-print_linked_list(removed_head)
+input_list = list(map(int,input().split()))
+head = create_linked_list(input_list)
+remove = remove_duplicates(head)
+print_linked_list(remove)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

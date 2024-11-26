@@ -3,12 +3,12 @@ class Node:
         self.data = data
         self.next = None
     
-def create_linked_list(lst):
-  if not lst :
+def create_linked_list(last):
+  if not last :
     return None
-  head = Node(lst[0])
+  head = Node(last[0])
   current = head
-  for data in lst[1:]:
+  for data in last[1:]:
     current.next = Node(data)
     current = current.next
   return head

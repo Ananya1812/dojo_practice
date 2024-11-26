@@ -1,26 +1,17 @@
-#take an dinput and check if the given list is a palindrome list or not 
 class Node:
     def __init__(self, data):  
         self.data = data
         self.next = None
-
-def create_linked_list(lst):
-    if not lst:
+        
+def create_linked_list(list):
+    if not list:
         return None
-    head = Node(lst[0])
+    head = Node(list[0])
     current = head
-    for data in lst[1:]:
+    for data in list[1:]:
         current.next = Node(data)
         current = current.next
     return head
-
-def print_linked_list(head):
-    current = head
-    while current :
-        print(current.data,end=" ")
-        current = current.next
-    print()
-
 
 def reverse(head):
     prev = None
@@ -32,29 +23,22 @@ def reverse(head):
         current = next_node
     return prev
 
-def palindrome_check(head):
-    if not head and head.next:
-        return None
-    slow = head
-    fast = head
-    while fast and fast.next:
-        slow = slow.next
-        fast = fast.next.next
-
-    second_half = reverse(slow)
-    first_half = head
-    while second_half:
-        if first_half.data != second_half.data:
+def compare(head1,head2):
+    while head1 and head2:
+        if head1.data != head2.data:
             return False
-        first_half = first_half.next
-        second_half = second_half.next
-    return True
-
-
-n = int(input())
-input = list(map(int,input().split()))
-head = create_linked_list(input)
-if palindrome_check(head):
+        head1 = head1.next
+        head2 = head2.next
+    return head1 is None and head2 is None
+    
+n= int(input())
+input_list = list(map(int,input().split()))
+head = create_linked_list(input_list)
+r = reverse(create_linked_list(input_list))
+if compare(head,r):
     print("Yes")
 else:
     print("No")
+        
+
+            

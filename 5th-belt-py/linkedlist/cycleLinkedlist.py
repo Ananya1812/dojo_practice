@@ -24,12 +24,14 @@ def isCycle(head, n, p):
             return True
     return False
 
-def createList(arr):
-    head = Node(arr[0])
-    temp = head
-    for i in range(1, len(arr)):
-        temp.next = Node(arr[i])
-        temp = temp.next
+def create_linked_list(list):
+    if not list:
+        return None
+    head = Node(list[0])
+    current = head
+    for data in list[1:]:
+        current.next = Node(data)
+        current = current.next
     return head
 
 n = int(input())
