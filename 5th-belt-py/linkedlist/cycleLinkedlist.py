@@ -38,6 +38,6 @@ n = int(input())
 arr = list(map(int, input().split()))
 p = int(input())
 
-head = createList(arr)
+head = create_linked_list(arr)
 result = isCycle(head, n, p)
 print(result)
