@@ -24,7 +24,7 @@ def remove_duplicates(head):
     if not head and head.next:
         return None
     current = head
-    while current:
+    while current :
         runner = current
         while runner.next:
             if runner.next.data == current.data:
@@ -33,6 +33,7 @@ def remove_duplicates(head):
                 runner = runner.next
         current = current.next
     return head
+
     
 n = int(input())
 input_list = list(map(int,input().split()))

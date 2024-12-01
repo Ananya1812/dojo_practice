@@ -12,14 +12,12 @@ def create_linked_list(lst):
         current.next = Node(data)
         current = current.next
     return head
-
     
-def pair_of_sum(head,x):
+def pair_sum(head,x):
     visited = set()
     current = head
-    
     while current :
-        complement = x-current.data
+        complement = x - current.data
         if complement in visited:
             print(complement,current.data)
             return
@@ -30,16 +28,6 @@ def pair_of_sum(head,x):
 n,x = map(int,input().split())
 input = list(map(int,input().split()))
 head = create_linked_list(input)
-pair_of_sum(head,x)
-            
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+pair_sum(head,x)
+        
     

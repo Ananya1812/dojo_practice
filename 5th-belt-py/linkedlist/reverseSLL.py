@@ -1,8 +1,10 @@
 class Node:
-    def __init__(self, data):  
+    def __init__(self, data):
         self.data = data
+        self.prev = None
         self.next = None
-        
+    
+    
 def create_linked_list(lst):
     if not lst:
         return None
@@ -12,34 +14,27 @@ def create_linked_list(lst):
         current.next = Node(data)
         current = current.next
     return head
-    
+
 def print_linked_list(head):
     current = head
-    while current:
+    while current :
         print(current.data,end = " ")
         current = current.next
     print()
     
-def reverse_list(head):
+def reverse_linked_list(head):
     prev = None
     current = head
-    while current:
+    while current :
         next_node = current.next
         current.next = prev
         prev = current
         current = next_node
     return prev
-    
+        
+                
 n = int(input())
-input_list = list(map(int,input().split()))
-head = create_linked_list(input_list)
-reversed = reverse_list(head)
-print_linked_list(reversed)
-     
-     
-    
-    
-    
-    
-    
-    
+a = list(map(int,input().split()))
+head = create_linked_list(a)
+reversed_head = reverse_linked_list(head)
+print_linked_list(reversed_head)
