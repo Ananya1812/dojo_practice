@@ -1,4 +1,3 @@
-# https://leetcode.com/problems/3sum-closest/
 def threeSumClosest(nums, target):
     nums.sort()
     n = len(nums)

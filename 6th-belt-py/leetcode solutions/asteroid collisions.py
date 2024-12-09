@@ -16,5 +16,10 @@ def asteroid_collision(asteroids):
     
     return stack
 
+n = int(input())
 asteroids = list(map(int, input().strip().split()))
-print(asteroid_collision(asteroids))
+result = asteroid_collision(asteroids)
+if result:
+    print(" ".join(map(str, result)))
+else:
+        print("Everything destroyed")

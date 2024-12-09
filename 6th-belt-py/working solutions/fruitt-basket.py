@@ -1,3 +1,4 @@
+n = int(input())
 fruits = list(map(int, input().split()))
 fruit_count = {}
 left = 0

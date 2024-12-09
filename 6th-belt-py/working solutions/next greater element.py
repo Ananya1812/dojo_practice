@@ -1,4 +1,3 @@
-# https://leetcode.com/problems/next-greater-element-i/
 def nextGreaterElement(nums1, nums2):
     next_greater = {}
     stack = []
@@ -18,6 +17,8 @@ def nextGreaterElement(nums1, nums2):
         else:
             result.append(-1)
     return result
+
+
 n = int(input())
 nums1 = list(map(int, input().split()))
 m = int(input())

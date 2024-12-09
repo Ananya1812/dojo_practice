@@ -1,4 +1,3 @@
-# https://leetcode.com/problems/sliding-window-maximum/
 def maxSlidingWindow(nums, k):
     result = []
     window = []
@@ -20,4 +19,3 @@ def maxSlidingWindow(nums, k):
 nums = list(map(int, input().split()))
 k = int(input())
 print(maxSlidingWindow(nums, k))
-

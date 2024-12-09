@@ -1,5 +1,3 @@
-# https://leetcode.com/problems/largest-rectangle-in-histogram/description/
-
 def largest_rectangle_area(heights):
     stack = []
     max_area = 0
