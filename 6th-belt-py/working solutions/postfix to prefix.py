@@ -1,19 +1,15 @@
-def postfix_to_prefix(postfix):
-    stack = []
-    operators = {'+', '-', '*', '/'}  
-
-    tokens = postfix.split()
-
-    for token in tokens:
-        if token not in operators:
-            stack.append(token)
-        else:
-            operand2 = stack.pop()
-            operand1 = stack.pop()
-            prefix_expr = token + " " + operand1 + " " + operand2
-            stack.append(prefix_expr)
-
-    return stack[0]
-
-postfix_expr = input().strip()
-print(postfix_to_prefix(postfix_expr))
+s = input()
+arr = []
+operators = ["+","-","/","*"]
+for i  in s.split():
+    if i in operators:
+        op2 = arr.pop()
+        op1 = arr.pop()
+        infix = i + " "+op1 + " "+op2
+        arr.append(infix)
+    else:
+        arr.append(i)
+        
+result = arr[0]
+print (result)
+        

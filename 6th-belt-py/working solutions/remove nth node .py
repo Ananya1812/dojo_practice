@@ -16,13 +16,13 @@ def create_linked_list(lst):
 def print_linked_list(head):
     current = head
     while current:
-        print(current.data, end=" ")
+        print(current.data, end=" -> ")
         current = current.next
-    print()
-
-def removeNthFromEnd(head: Node, n: int) -> Node:
+    print("nullptr")
+    
+def remove_node(head,n):
     fast = slow = head
-    for _ in range(n):
+    for i in range(n):
         fast = fast.next
     if not fast:
         return head.next
@@ -31,9 +31,21 @@ def removeNthFromEnd(head: Node, n: int) -> Node:
         slow = slow.next
     slow.next = slow.next.next
     return head
-
-head_values = list(map(int, input().split()))
+    
+k = int(input())
+input_list = list(map(int,input().split()))
 n = int(input())
-head = create_linked_list(head_values)
-new_head = removeNthFromEnd(head, n)
-print_linked_list(new_head)
+head = create_linked_list(input_list)
+new_list = remove_node(head,n)
+print_linked_list(new_list)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

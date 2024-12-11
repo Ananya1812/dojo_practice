@@ -1,15 +1,14 @@
-str1 = input()
+s = input()
 arr = []
-operators = ["+", "-", "*", "/"]
-
-for i in str1.split():
+operators = ["+","-","*","/"]
+for i in s.split():
     if i in operators:
-        op2 = arr.pop(len(arr) - 1)
-        op1 = arr.pop(len(arr) - 1)
-        infix = "( " + op1 + " " + i + " " + op2 + " )"
+        op2 = arr.pop(len(arr)-1)        
+        op1 = arr.pop(len(arr)-1)
+        infix = "(" + op1 + " " + i + " " + op2 + ")"
         arr.append(infix)
     else:
         arr.append(i)
-
-result = arr[len(arr) - 1]
+        
+result = arr[len(arr)-1]
 print(result)

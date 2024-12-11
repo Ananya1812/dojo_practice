@@ -1,18 +1,18 @@
-def successful_pairs(spells, potions, success):
+def successful_pairs(spells,portions,success):
     result = []
-    for spell in spells:
+    for s in spells:
         count = 0
-        for potion in potions:
-            if spell * potion >= success:
+        for p in portions:
+            if s*p >= success:
                 count += 1
         result.append(count)
     return result
+
 n,m = map(int,input().split())
-spells = list(map(int, input().split()))
-potions = list(map(int, input().split()))
+spells = list(map(int,input().split()))
+portions = list(map(int,input().split()))
 success = int(input())
-
-pairs = successful_pairs(spells, potions, success)
-
-print(" ".join(map(str, pairs)))
-
+result = successful_pairs(spells,portions,success)
+for i in result:
+    print(i,end = " ")
+    

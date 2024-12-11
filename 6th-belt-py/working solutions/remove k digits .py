@@ -4,11 +4,14 @@ def max_operations(nums, k):
 
     for num in nums:
         complement = k - num
-        if freq.get(complement, 0) > 0:
+        if complement in freq and freq[complement] > 0:
             freq[complement] -= 1
             count += 1
         else:
-            freq[num] = freq.get(num, 0) + 1
+            if num in freq:
+                freq[num] += 1
+            else:
+                freq[num] = 1
 
     return count
 
