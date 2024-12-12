@@ -11,5 +11,5 @@ for i  in s.split():
         arr.append(i)
         
 result = arr[0]
-print (result)
+print (result) 
         

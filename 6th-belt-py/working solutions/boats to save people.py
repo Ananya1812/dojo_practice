@@ -1,22 +1,22 @@
-def num_rescue_boats(people, limit):
-    def manual_sort(people):
-        for i in range(len(people)):
-            for j in range(i + 1, len(people)):
-                if people[i] > people[j]:
-                    people[i], people[j] = people[j], people[i]
-
-    manual_sort(people)
-    left, right = 0, len(people) - 1
+def rescue(people,limit):
+    def sort(people):
+        n = len(people)
+        for i in range(n):
+            for j in range(n-i-1):
+                if people[j] > people[j+1]:
+                    people[j],people[j+1] = people[j+1],people[j]
+                    
+    sort(people)
+    left = 0
+    right = len(people) - 1 
     boats = 0
-
-    while left <= right:
+    while left<= right:
         if people[left] + people[right] <= limit:
-            left += 1
-        right -= 1
-        boats += 1
-
-    return boats
-
-n, limit = map(int, input().split())
-people = list(map(int, input().split()))
-print(num_rescue_boats(people, limit))
+            left += 1 
+        right -= 1 
+        boats += 1 
+    return boats    
+    
+n,limit = map(int,input().split())
+people = list(map(int,input().split())) 
+print(rescue(people,limit))

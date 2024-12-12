@@ -1,14 +1,24 @@
+def fruit_basket(n,fruits):
+    count = {}
+    left = 0
+    max_fruits = 0
+    for right in range(n):
+        if fruits[right] in count :
+            count[fruits[right]]+= 1 
+        else:
+            count[fruits[right]] = 1
+            
+        while len(count) > 2:
+            count[fruits[left]] -= 1 
+            if count[fruits[left]] == 0:
+                count.pop(fruits[left],None)
+            left += 1 
+        
+        x = right - left + 1 
+        if x > max_fruits:
+            max_fruits = x 
+    return max_fruits
+
 n = int(input())
-fruits = list(map(int, input().split()))
-fruit_count = {}
-left = 0
-max_fruits = 0
-for right in range(len(fruits)):
-    fruit_count[fruits[right]] = fruit_count.get(fruits[right], 0) + 1
-    while len(fruit_count) > 2:
-        fruit_count[fruits[left]] -= 1
-        if fruit_count[fruits[left]] == 0:
-            del fruit_count[fruits[left]]
-        left += 1
-    max_fruits = max(max_fruits, right - left + 1)
-print(max_fruits)
+fruits = list(map(int,input().split()))
+print(fruit_basket(n,fruits))

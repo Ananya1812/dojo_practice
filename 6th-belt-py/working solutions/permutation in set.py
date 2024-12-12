@@ -19,4 +19,3 @@ def get_permutation(n, k):
 n,k = map(int,input().split())
 result = get_permutation(n, k)
 print(result)
-

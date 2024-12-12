@@ -16,3 +16,4 @@ n = int(input())
 result = generate_parenthesis(n)
 for i in result:
     print(i,end = " ")
+    
