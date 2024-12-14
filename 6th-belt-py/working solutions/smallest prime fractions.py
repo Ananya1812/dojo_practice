@@ -1,17 +1,17 @@
-def smallestPrime(arr,k):
-    fractions = []
-    for i in range(len(arr)):
-        for j in range(i+1,len(arr)):
-            fractions.append((arr[i],arr[j]))
+def kthsmallestPrime(nums,k):
+    fraction = []
+    for i in range(len(nums)):
+        for j in range(i+ 1,len(nums)):
+            fraction.append((nums[i],nums[j]))
             
-    for i in range(len(fractions)):
-        for j in range(i+1,len(fractions)):
-            if fractions[i][0]/fractions[i][1] > fractions[j][0]/fractions[j][1]:
-                fractions[i],fractions[j] = fractions[j],fractions[i]
+    for i in range(len(fraction)):
+        for j in range(i+1,len(fraction)):
+            if fraction[i][0]/fraction[i][1] > fraction[j][0]/fraction[j][1]:
+                fraction[i],fraction[j] = fraction[j],fraction[i]
                 
-    return [fractions[k-1][0],fractions[k-1][1]]
-    
+    return [fraction[k-1][0],fraction[k-1][1]]
+
 n,k = map(int,input().split())
-arr = list(map(int,input().split()))
-result = smallestPrime(arr,k)
+nums = list(map(int,input().split()))
+result = kthsmallestPrime(nums,k)
 print(result[0],result[1])

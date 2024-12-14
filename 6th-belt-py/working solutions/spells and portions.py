@@ -1,4 +1,4 @@
-def successful_pair(spells,potions,success):
+def successful_pair(spells,potions,nums):
     result = []
     for s in spells:
         count = 0
@@ -8,7 +8,7 @@ def successful_pair(spells,potions,success):
         result.append(count)
     return result
 
-n,m = map(int,input().split())
+n, m = map(int,input().split())
 spells = list(map(int,input().split()))
 potions = list(map(int,input().split()))
 success = int(input())

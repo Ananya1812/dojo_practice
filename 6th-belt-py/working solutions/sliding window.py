@@ -16,5 +16,5 @@ nums = list(map(int,input().split()))
 k = int(input())
 result = sliding_window(nums,k)
 print(" ".join(map(str,result)))
-
+ 
 

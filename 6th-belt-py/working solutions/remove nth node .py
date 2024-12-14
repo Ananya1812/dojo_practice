@@ -3,7 +3,6 @@ class Node:
         self.data = data
         self.next = next
         
-        
 def create_linked_list(lst):
     if not lst:
         return None
@@ -19,9 +18,9 @@ def print_linked_list(head):
     while current:
         print(current.data,end = " ")
         current = current.next
-    return head
+    print()
     
-def remove_node(head,k):
+def remove_node(nums,k):
     fast = slow = head
     for i in range(k):
         fast = fast.next
@@ -34,8 +33,8 @@ def remove_node(head,k):
     return head
     
 n = int(input())
-input_list = list(map(int,input().split()))
+nums = list(map(int,input().split()))
 k = int(input())
-head = create_linked_list(input_list)
-removed_list = remove_node(head,k)
-print_linked_list(removed_list)
+head = create_linked_list(nums)
+new_list = remove_node(nums,k)
+print_linked_list(new_list)
