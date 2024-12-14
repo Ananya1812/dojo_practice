@@ -1,27 +1,25 @@
 def permute(nums):
     def generate_permutations(nums,start):
-        if start == len(nums) -1:
-            result.append(nums[:])
+        if start == len(nums)-1:
+            res.append(nums[:])
             return
         for i in range(start,len(nums)):
             nums[i],nums[start] = nums[start],nums[i]
-            generate_permutations(nums,start+1)
+            generate_permutations(nums, start+1)
             nums[i],nums[start] = nums[start],nums[i]
             
-    result = []
+    res = []
     generate_permutations(nums,0)
-    return result
+    return res 
     
-    
-def sort(a):
-    n = len(a)
+def sort(nums):
+    n = len(nums)
     for i in range(n):
-        for j in range(n-1-i):
-            if a[j]>a[j+1]:
-                a[j],a[j+1] = a[j+1],a[j]
+        for j in range(n-i-1):
+            if nums[j] > nums[j+1]:
+                nums[j],nums[j+1] = nums[j+1],nums[j]
                 
 
-    
 
 n = int(input())
 nums = list(map(int,input().split()))

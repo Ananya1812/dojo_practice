@@ -1,21 +1,20 @@
-def compute_factorial(num):
-    result = 1
-    for i in range(1, num + 1):
-        result *= i
+def compute_factorial(n):
+    result = 1 
+    for i in range(1,n+1):
+        result *= i 
     return result
-
-def get_permutation(n, k):
-    nums = list(range(1, n + 1))
-    k -= 1 
+    
+def get_permutations(n,k):
     result = []
-
-    for i in range(n):
-        fact = compute_factorial(n - 1 - i) 
-        index = k // fact
+    k -= 1 
+    nums = list(range(1,n+1))
+    for i in range(len(nums)):
+        fact = compute_factorial(n - i - 1 )
+        index = k// fact 
         result.append(str(nums.pop(index)))
-        k %= fact
-    return ''.join(result)
-
+        k %= 2
+    return result
 n,k = map(int,input().split())
-result = get_permutation(n, k)
-print(result)
+result = get_permutations(n,k)
+for i in result:
+    print(i, end = "")

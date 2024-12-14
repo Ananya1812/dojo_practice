@@ -1,14 +1,14 @@
 s = input()
-arr = []
+stack = []
 operators = ["+","-","/","*"]
 for i in s.split():
     if i in operators:
-        op2 = arr.pop(len(arr)-1)
-        op1 = arr.pop(len(arr)-1)
+        op2 = stack.pop(len(stack)-1)
+        op1 = stack.pop(len(stack)-1)
         infix = "("+op1+" "+i+" "+op2+")"
-        arr.append(infix)
+        stack.append(infix)
     else:
-        arr.append(i)
+        stack.append(i)
         
-result = arr[len(arr)-1]
+result = stack[len(stack)-1]
 print(result)

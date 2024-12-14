@@ -21,4 +21,4 @@ result = asteroid_collision(asteroids)
 if result:
     print(" ".join(map(str, result)))
 else:
-        print("Everything destroyed")
+        print("Everything destroyed") 
