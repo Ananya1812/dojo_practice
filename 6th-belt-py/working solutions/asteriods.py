@@ -1,4 +1,3 @@
-
 def asteroid_collision(asteroids):
     arr = []
     

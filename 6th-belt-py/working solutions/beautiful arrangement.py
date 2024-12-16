@@ -1,23 +1,16 @@
-def countArrangement(n):
-    memo = {}
-    
-    def backtrack(mask, position):
-        if mask == (1 << n) - 1:
-            return 1
+def arrangement(n):
+    def dfs(pos):
+        if pos > n:
+            return 1 
+        total = 0
+        for i in range(1,n+1):
+            if not visited[i] and (i % pos == 0 or pos % i == 0):
+                visited[i] = True
+                total += dfs(pos+1)
+                visited[i] = False
+        return total
         
-        if (mask, position) in memo:
-            return memo[(mask, position)]
-        
-        count = 0
-        for num in range(1, n + 1):
-            if (mask & (1 << (num - 1))) == 0:
-                if num % position == 0 or position % num == 0:
-                    count += backtrack(mask | (1 << (num - 1)), position + 1)
-        
-        memo[(mask, position)] = count
-        return count
-    
-    return backtrack(0, 1)
-
-n = int(input())  
-print(countArrangement(n))
+    visited = [False] * (n+1)
+    return dfs(1)
+n = int(input())
+print(arrangement(n))

@@ -1,24 +1,20 @@
-def max_consecutive_ones(nums, k):
+def binary(nums,k):
     left = 0
-    max_ones = 0
-    zero_count = 0
-
+    count = 0
+    ones = 0
     for right in range(len(nums)):
         if nums[right] == 0:
-            zero_count += 1
-
-        while zero_count > k:
+            count += 1 
+        while count > k:
             if nums[left] == 0:
-                zero_count -= 1
-            left += 1
+                count -= 1 
+            left += 1 
+        if ones <right - left +1:
+            ones = right - left + 1 
+    return ones
 
-        max_ones = max(max_ones, right - left + 1)
-
-    return max_ones
-
-x = int(input())
-nums = list(map(int, input().split()))
+n = int(input())
+nums = list(map(int,input().split()))
 k = int(input())
-
-result = max_consecutive_ones(nums, k)
+result = binary(nums,k)
 print(result)
