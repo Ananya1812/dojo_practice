@@ -15,10 +15,10 @@ def create_linked_list(lst):
     
 def print_linked_list(head):
     current = head
-    while current:
+    while current :
         print(current.data,end = " ")
         current = current.next
-    print()
+    return head
     
 def remove_node(nums,k):
     fast = slow = head
@@ -31,10 +31,10 @@ def remove_node(nums,k):
         slow = slow.next
     slow.next = slow.next.next
     return head
-    
+
 n = int(input())
 nums = list(map(int,input().split()))
 k = int(input())
 head = create_linked_list(nums)
-new_list = remove_node(nums,k)
-print_linked_list(new_list)
+removed_node = remove_node(nums,k)
+print_linked_list(removed_node)
