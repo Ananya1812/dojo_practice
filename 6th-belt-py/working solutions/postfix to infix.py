@@ -10,5 +10,5 @@ for i in s.split():
     else:
         stack.append(i)
         
-result = stack[len(stack)-1]
+result = stack[len(stack)-1] 
 print(result) 

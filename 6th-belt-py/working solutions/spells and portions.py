@@ -13,5 +13,5 @@ spells = list(map(int,input().split()))
 potions = list(map(int,input().split()))
 success = int(input())
 result = success_pair(spells,potions,success)
-for i in result :
+for i in result : 
     print(i,end = " ")
