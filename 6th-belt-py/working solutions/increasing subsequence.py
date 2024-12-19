@@ -8,7 +8,7 @@ def lis(nums):
                 if dp[i]<dp[j] + 1:
                     dp[i] = dp[j]+1 
                     
-    max_value = dp[0]
+    max_value = dp[0] 
     for i in range(len(dp)):
         if dp[i] > max_value:
             max_value = dp[i]

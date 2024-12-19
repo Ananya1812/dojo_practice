@@ -18,7 +18,7 @@ def fruit_basket(n,fruits):
     if x > max_fruits:
         max_fruits = x 
     return max_fruits
-    
+     
 n = int(input())
 fruits = list(map(int,input().split()))
 print(fruit_basket(n,fruits))

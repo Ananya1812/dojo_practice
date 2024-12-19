@@ -14,5 +14,5 @@ def smallestPrime(nums,k):
 n,k = map(int,input().split())
 nums = list(map(int,input().split()))
 result = smallestPrime(nums,k)
-print(result[0],result[1]) 
+print(result[0],result[1])  
 

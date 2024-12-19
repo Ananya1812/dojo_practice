@@ -11,7 +11,7 @@ def generate_parenthesis(n):
     res = []
     backtrack()
     return res
-
+ 
 n = int(input())
 result = generate_parenthesis(n)
 for i in result:

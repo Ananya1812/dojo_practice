@@ -40,4 +40,4 @@ s1 = input()
 s2 = input()
 print(checkInclusion(s1,s2))
         
-        
+         

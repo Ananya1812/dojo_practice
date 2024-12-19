@@ -24,4 +24,4 @@ nums = list(map(int,input().split()))
 result = permute(nums)
 sort(result)
 for i in result:
-    print(" ".join(map(str,i)))
+    print(" ".join(map(str,i))) 

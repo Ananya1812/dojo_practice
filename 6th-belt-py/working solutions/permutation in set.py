@@ -19,4 +19,4 @@ n,k = map(int,input().split())
 result = (get_permutations(n,k))
 for i in result:
     print(i,end= "")
-    
+     

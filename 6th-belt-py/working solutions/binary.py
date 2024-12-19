@@ -16,4 +16,4 @@ def binary(nums,k):
 n = int(input())
 nums = list(map(int,input().split()))
 k = int(input())
-print(binary(nums,k))
+print(binary(nums,k)) 

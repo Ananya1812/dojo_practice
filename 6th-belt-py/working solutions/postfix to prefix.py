@@ -11,3 +11,4 @@ for i in s.split():
         stack.append(i)
         
 print(stack[0])
+ 

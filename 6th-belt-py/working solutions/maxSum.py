@@ -14,7 +14,7 @@ def maxSumOperations(n,index,max_sum):
         
         total = right_sum +left_sum + value
         return total<= max_sum 
-        
+         
     low = 1 
     high = max_sum
     answer = 0
