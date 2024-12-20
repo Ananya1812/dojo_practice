@@ -12,7 +12,7 @@ def binary(nums,k):
         if ones<right-left+1:
             ones = right-left+1 
     return ones
-    
+     
 n = int(input())
 nums = list(map(int,input().split()))
 k = int(input())

@@ -15,4 +15,4 @@ def generate_parenthesis(n):
 n = int(input())
 result = generate_parenthesis(n)
 for i in result:
-    print(i,end= " ")
+    print(i,end= " ") 

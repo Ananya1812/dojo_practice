@@ -13,7 +13,7 @@ def request(ages):
         for j in range(len(ages)):
             if i != j and can_send_request(ages[i],ages[j]):
                 count += 1 
-    return count
+    return count 
 
 n = int(input())
 ages = list(map(int,input().split()))

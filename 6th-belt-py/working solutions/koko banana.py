@@ -21,4 +21,4 @@ def koko_banana(piles,h):
 n,h = map(int,input().split())
 piles = list(map(int,input().split()))
 result = koko_banana(piles,h)
-print(result)
+print(result) 

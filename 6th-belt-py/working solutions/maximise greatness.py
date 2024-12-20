@@ -13,7 +13,7 @@ def maximise_greatness(nums):
         if nums[i] >nums[j]:
             count += 1 
             j+=1
-    return count  
+    return count   
     
 n = int(input())
 nums = list(map(int,input().split()))

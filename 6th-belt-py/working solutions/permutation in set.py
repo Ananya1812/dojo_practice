@@ -14,7 +14,7 @@ def get_permutations(n,k):
         result.append(str(nums.pop(index)))
         k %= 2
     return result
-    
+     
 n,k = map(int,input().split())
 result = (get_permutations(n,k))
 for i in result:

@@ -1,25 +1,31 @@
-def letter_combinations(digits):
+def phone_combination(digits):
     if not digits:
         return []
-    
-    digit_to_letters = {
-        '2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl',
-        '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'
+        
+    digits_letter = {
+        '2': 'abc',
+        '3': 'def',
+        '4': 'ghi',
+        '5': 'jkl',
+        '6': 'mno',
+        '7': 'pqrs',
+        '8': 'tuv',
+        '9': 'wxyz'
     }
     
-    result = []
-    
-    def backtrack(index, current_combination):
+    def backtrack(index,combinations):
         if index == len(digits):
-            result.append(current_combination)
+            result.append(combinations)
             return
-        
-        current_digit = digits[index]
-        for letter in digit_to_letters[current_digit]:
-            backtrack(index + 1, current_combination + letter)
-    
-    backtrack(0, "")
+        current = digits[index]
+        for i in digits_letter[current]:
+            backtrack(index+1,combinations + i)
+            
+    result = []
+    backtrack(0,"")
     return result
-
-digits = input().strip()
-print(letter_combinations(digits))
+    
+digits = input()
+result = phone_combination(digits)
+for i in result:
+    print(i,end = " ")

@@ -8,7 +8,7 @@ def arrangement(n):
                 visited[i] = True
                 total += dfs(pos+1)
                 visited[i] = False
-        return total
+        return total 
         
     visited = [False] * (n+1)
     return dfs(1)

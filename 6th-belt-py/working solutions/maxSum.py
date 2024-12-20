@@ -23,7 +23,7 @@ def maxSumOperations(n,index,max_sum):
         if is_valid(mid):
             answer = mid
             low = mid+1
-        else:
+        else: 
             high = mid -1 
             
     return answer

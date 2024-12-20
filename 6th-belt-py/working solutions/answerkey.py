@@ -16,7 +16,7 @@ for right in range(len(ans)):
         
 left = 0
 count = 0
-
+ 
 for right in range(len(ans)):
     if ans[right] != 'F':
         count += 1 

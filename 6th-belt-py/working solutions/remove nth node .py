@@ -18,7 +18,7 @@ def print_linked_list(head):
     while current :
         print(current.data,end = " ")
         current = current.next
-    print() 
+    print()  
      
 def remove_node(nums,k):
     fast = slow = head

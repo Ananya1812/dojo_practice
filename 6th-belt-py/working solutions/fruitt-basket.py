@@ -16,7 +16,7 @@ def fruit_basket(n,fruits):
         
     x = right - left +1
     if x > max_fruits:
-        max_fruits = x 
+        max_fruits = x  
     return max_fruits
      
 n = int(input())

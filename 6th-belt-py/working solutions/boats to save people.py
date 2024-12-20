@@ -16,7 +16,7 @@ def rescue(people,limit):
         right -= 1 
         boats += 1 
     return boats  
-    
+     
 n,limit= map(int,input().split())
 people = list(map(int,input().split()))
 print(rescue(people,limit))

@@ -38,6 +38,6 @@ def checkInclusion(s1,s2):
 
 s1 = input()
 s2 = input()
-print(checkInclusion(s1,s2))
+print(checkInclusion(s1,s2)) 
         
          
