@@ -10,7 +10,7 @@ def koko_banana(piles,h):
         if i > high:
             high = i 
     low = 1  
-    while low<high:
+    while low<high: 
         mid = (low+high) //2
         if can_eat_in_time(mid):
             high = mid

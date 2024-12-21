@@ -1,19 +1,17 @@
-def smallestPrime(nums,k):
-    fractions = []
+def smallestPrimeFraction(nums):
+    fraction = []
     for i in range(len(nums)):
         for j in range(i+1,len(nums)):
-            fractions.append((nums[i],nums[j]))
+            fraction.append((nums[i],nums[j]))
             
-    for i in range(len(fractions)):
-        for j in range(i+1,len(fractions)):
-            if fractions[i][0] / fractions[i][1] > fractions[j][0]/fractions[j][1]:
-                fractions[i],fractions[j] = fractions[j],fractions[i]
+    for i in range(len(fraction)):
+        for j in range(i+1,len(fraction)):
+            if fraction[i][0] / fraction[i][1] > fraction[j][0]/fraction[j][1]:
+                fraction[i], fraction[j] = fraction[j],fraction[i]
                 
-    return [fractions[i-k][0],fractions[i-k][1]]
+    return [fraction[i-k][0],fraction[i-k][1]]
     
 n,k = map(int,input().split())
-nums = list(map(int,input().split()))
-result = smallestPrime(nums,k)
-print(result[0],result[1])  
-
- 
+nums= list(map(int,input().split()))
+result = smallestPrimeFraction(nums)
+print(result[0],result[1])

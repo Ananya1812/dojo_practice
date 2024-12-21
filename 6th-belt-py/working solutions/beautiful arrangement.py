@@ -11,7 +11,7 @@ def arrangement(n):
         return total
     visited = [False] * (n+1)
     return dfs(1)
-    
+     
 n = int(input())
 print(arrangement(n))
     

@@ -12,7 +12,7 @@ def rescue(people,limit):
     boats = 0
     while left <= right:
         if people[right] +people[left] <= limit:
-            left += 1 
+            left += 1  
         right -= 1 
         boats += 1 
     return boats  

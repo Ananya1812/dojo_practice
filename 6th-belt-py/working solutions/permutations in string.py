@@ -9,15 +9,15 @@ def checkInclusion(s1,s2):
         else:
             s1_count[char] = 1 
             
-    window= {}
+    window = {}
     for i in range(len(s1)):
         char = s2[i]
         if char in window:
-            window[char] += 1
+            window[char] += 1 
         else:
-            window[char] = 1
-            
-    if s1_count == window:
+             window[char] = 1 
+             
+    if s1_count ==  window:
         return True
         
     for i in range(len(s1),len(s2)):
@@ -28,16 +28,16 @@ def checkInclusion(s1,s2):
         else:
             window[right] = 1 
             
-        window[left] -=1
+        window[left] -= 1 
         if window[left] == 0:
             window.pop(left,None)
-        
+            
+            
         if s1_count == window:
             return True
+            
     return False
-
+    
 s1 = input()
 s2 = input()
-print(checkInclusion(s1,s2)) 
-        
-         
+print (checkInclusion(s1,s2))

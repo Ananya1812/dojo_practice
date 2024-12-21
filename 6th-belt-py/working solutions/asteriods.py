@@ -10,7 +10,7 @@ def asteroid_collision(asteroids):
             break
         else:
             arr.append(i)
-    return arr 
+    return arr  
                 
 
 n = int(input())

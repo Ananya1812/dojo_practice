@@ -7,7 +7,7 @@ def subarray(nums,x):
             count += length
         else:
             length = 0
-    return count
+    return count 
     
 def boundedMax(nums,left,right):
     return subarray(nums,right) - subarray(nums,left - 1)

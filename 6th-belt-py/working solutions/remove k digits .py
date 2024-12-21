@@ -12,7 +12,7 @@ def maxOperations(nums,k):
             else:
                 freq[i] = 1 
                 
-    return count
+    return count 
         
 n,k = map(int,input().split())    
 nums = list(map(int,input().split()))

@@ -9,7 +9,7 @@ def generate_parenthesis(n):
             backtrack(s+")",left,right +1)
             
     res = []
-    backtrack()
+    backtrack() 
     return res
  
 n = int(input())

@@ -8,7 +8,7 @@ def histogram(heights):
             max_area = max(max_area,h*width)
         stack.append(i)
         
-    while stack:
+    while stack: 
         h = heights[stack.pop()]
         width = n if not stack else n - stack[-1] -1
         max_area = max(max_area,h*width)

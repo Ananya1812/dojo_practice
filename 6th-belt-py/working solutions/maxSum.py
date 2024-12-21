@@ -13,7 +13,7 @@ def maxSumOperations(n,index,max_sum):
             right_sum = value * (value - 1) // 2 + (right_elements - value + 1)
         
         total = right_sum +left_sum + value
-        return total<= max_sum 
+        return total<= max_sum  
          
     low = 1 
     high = max_sum

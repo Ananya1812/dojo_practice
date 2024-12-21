@@ -1,15 +1,15 @@
 def permute(nums):
-    def generate_permutations(nums,start):
-        if start == len(nums)-1 :
+    def get_permutations(nums,start):
+        if start == len(nums)-1:
             res.append(nums[:])
             return
         for i in range(start,len(nums)):
-            nums[i],nums[start] = nums[start],nums[i]
-            generate_permutations(nums,start+1)
-            nums[i],nums[start] = nums[start],nums[i]
+            nums[i],nums[start] = nums[start] ,nums[i]
+            get_permutations(nums,start +1)
+            nums[i],nums[start] = nums[start] ,nums[i]
             
     res = []
-    generate_permutations(nums,0)
+    get_permutations(nums,0)
     return res
     
 def sort(a):
@@ -25,3 +25,5 @@ result = permute(nums)
 sort(result)
 for i in result:
     print(" ".join(map(str,i))) 
+
+        

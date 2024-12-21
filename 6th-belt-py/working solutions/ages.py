@@ -9,7 +9,7 @@ def request(ages):
         return True
         
     count = 0 
-    for i in range(len(ages)):
+    for i in range(len(ages)): 
         for j in range(len(ages)):
             if i != j and can_send_request(ages[i],ages[j]):
                 count += 1 
